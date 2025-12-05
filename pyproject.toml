@@ -1,0 +1,27 @@
+[project]
+name = "holistic_interview_evaluator_with_reference_answers"
+version = "0.1.0"
+description = "holistic_interview_evaluator_with_reference_answers using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[litellm,tools,google-genai]==1.4.1",
+    "fastapi>=0.109.0",
+    "uvicorn>=0.27.0",
+]
+
+[project.scripts]
+holistic_interview_evaluator_with_reference_answers = "holistic_interview_evaluator_with_reference_answers.main:run"
+run_crew = "holistic_interview_evaluator_with_reference_answers.main:run"
+start_server = "holistic_interview_evaluator_with_reference_answers.api_server:start"
+train = "holistic_interview_evaluator_with_reference_answers.main:train"
+replay = "holistic_interview_evaluator_with_reference_answers.main:replay"
+test = "holistic_interview_evaluator_with_reference_answers.main:test"
+run_with_trigger = "holistic_interview_evaluator_with_reference_answers.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
